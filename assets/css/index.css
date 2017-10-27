@@ -1,0 +1,252 @@
+nav
+{
+  background-color: #62B7BA;
+  border-radius: 0 !important;
+  position: inherit;
+}
+
+.navbar-brand
+{
+   color: white;
+}
+
+.navbar-nav li a
+{
+  font-size: 20px;
+  color: white;
+}
+
+.margins
+{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.toogleBlockForNavbar
+{
+  min-height: 30px;
+  background-color: #5BAAAD;
+  position: fixed;
+  top:0;
+  width:100%;
+  z-index:100;
+  opacity: 0.6 !important;
+}
+
+.showNavButton
+{
+  animation: blinker 2s linear infinite;
+
+}
+
+.toggleIconRotate
+{
+  text-align: center;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+@keyframes blinker {
+  50% {opacity: 0;}
+}
+
+
+.carousel-inner
+{
+  max-height: 620px;
+}
+
+.filtersBlock
+{
+  float:left;
+  width: 19%;
+  margin-left: 0.5%;
+  background-color: white;
+  margin-top: 0.5%;
+  margin-bottom: 1%;
+  margin-right: 0.5%;
+}
+
+body
+{
+  background-color: #C4C4C4 !important;
+}
+
+.repeatingDataBlock
+{
+  float: right;
+  background-color: white;
+  width: 79%;
+  margin-left: 0.5%;
+  margin-top: 0.5% !important;
+  margin-bottom: 1%;
+  margin-right: 0.5% !important;
+}
+
+.filterTitle
+{
+  padding: 1.5%;
+  border-bottom: 4px solid #C4C4C4;
+}
+
+.filterTitle h4 span
+{
+  color:#62B7BA;
+  font-family: 'Arima Madurai', cursive;
+}
+
+.filterTitle2
+{
+  padding: 1%;
+  border-bottom: 3px solid #C4C4C4;
+  margin-left: 1%;
+}
+
+.filterTitle2 span
+{
+  font-family: 'Raleway', sans-serif;
+}
+
+#searchBlockCharector
+{
+  width: 100%;
+}
+#searchInput
+{
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border: none;
+  border-bottom: 2px solid #C4C4C4;
+}
+
+.filterCharectors div
+{
+  padding-left: 5% ;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  font-style: normal !important;
+}
+
+.filterCharectors
+{
+  border-bottom: 1px solid #C4C4C4;
+}
+
+.filterCharectors div
+{
+  font-family: 'Raleway', sans-serif;
+}
+
+.filterCharectors h5
+{
+  font-family: 'Raleway', sans-serif;
+}
+
+.filterCharectors a
+{
+  padding: 1%;
+  color: black;
+  font-family: 'Raleway', sans-serif;
+  width: 50%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 25%;
+  border-radius: 10px;
+  margin-right: 25%;
+  border: 1px solid #C4C4C4 !important;
+  transition-property: background,color;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
+.filterCharectors a:hover
+{
+  background-color: green;
+  color: white;
+}
+
+#selectHouseDropdown
+{
+  border: none !important;
+  border-bottom: 1px solid #C4C4C4 !important;
+  padding: 3%;
+  width: 130px;
+  transition-property: border;
+  font-family: 'Raleway', sans-serif;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
+#selectHouseDropdown:hover
+{
+  border-bottom: 2px solid #62B7BA !important;
+}
+
+.sortButton
+{
+  margin-top:7%;
+  width:50%;
+  margin-left: 25%;
+  font-family: 'Raleway', sans-serif;
+  margin-right: 25%;
+  background-color: transparent;
+  border: 1px solid red !important;
+  transition-property: background,color;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+.sortButton span
+{
+  margin-top: 2.5%;
+}
+
+.sortButton:hover
+{
+  background-color: red;
+  color: white !important;
+}
+
+select
+{
+  padding: 3.5% !important;
+  transition-property:border-radius,color;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+}
+
+select:hover
+{
+  border-radius: 16px !important;
+}
+
+.selectToDisplay
+{
+  padding: 0 !important;
+  margin: 0 !important;
+  margin-top: 1% !important;
+  margin-bottom: 1% !important;
+}
+
+.selectToDisplay div a
+{
+  border: 1px solid #62B7BA;
+  color: black;
+  width: 130px;
+  font-family: 'Raleway', sans-serif;
+  transition-property: background,color;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
+.selectToDisplay div a:hover
+{
+  background-color: #62B7BA;
+  color: white;
+}
+
+.mainRepeatBlock
+{
+  border-top: 20px solid #C4C4C4;
+}

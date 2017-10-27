@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="booksApp">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/index.css">
+
+    <!-- Font Awesome Plugin/Library for icons and fonts to make the website look more leegant -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Source+Sans+Pro|Lobster|Raleway|Merienda|Arima+Madurai" rel="stylesheet">
+    <title> Game of thrones </title>
+  </head>
+  <body>
+
+    <div jquery>
+
+    <!-- Navbar START -->
+    <div class="toogleBlockForNavbar">
+      <div class="text-center showNavButton" id="toggleIcon" >
+        <span>
+          <a href="#/">
+            <i class="fa fa-angle-double-down fa-3x"  style="color: white;" aria-hidden="true"></i>
+          </a>
+          </span>
+      </div>
+
+    <nav class="navbar margins" role="navigation">
+        <div class="row margins">
+           <div class="col col-xs-4 col-md-4 col-sm-4">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse" name="button">
+                   <span class="sr-only"> Toggle Navigation </span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="#">G.O.T</a>
+              </div>
+           </div>
+
+           <div class="col col-xs-8 col-md-8 col-sm-8 margins">
+             <div class="collapse navbar-collapse margins" id="navbarCollapse">
+               <ul class="nav navbar-nav">
+                 <li><a href="#">About</a></li>
+                 <li><a href="#">Home</a></li>
+               </ul>
+             </div>
+           </div>
+         </div>
+
+    </nav>
+    <!-- Navbar END -->
+    </div>
+    <div ng-view>
+
+    </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Angular.js CDN -->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+
+      <script src="angular/app.js">  </script>
+      <script src="angular/directives/jQuery.js">  </script>
+      <script src="angular/directives/booksDirective.js">  </script>
+      <script src="angular/directives/charactersDirective.js">  </script>
+      <script src="angular/directives/housesDirective.js">  </script>
+      <script src="angular/routes.js">  </script>
+      <script src="angular/services/service.js">  </script>
+      <script src="angular/controllers/mainController.js">  </script>
+
+  </body>
+</html>
