@@ -1,1 +1,31 @@
-{{combinedData.houses}}
+
+<!-- This is the template html file for houses -->
+<!-- It is declared in the custom directive -->
+<!-- It is here used to give different appearence to all categories inside a single ng-repeat -->
+<!-- To achieve the above stated, we need to create custom directives and for which template html is required where we design the look and feel of our custom directive-->
+
+<!-- housesTemplate START-->
+
+<!-- Block to show the houses card -->
+<div class="card housesCard col col-sm-12 col-md-12">
+  <!-- Name of the house from the controller -->
+  <div class="col col-xs-12 col-sm-12 col-md-12 houseName" >
+       &nbsp &nbsp {{::combinedData.name}}
+  </div>
+  <br> <br> <br> <br>
+  <!-- Region of the house from the controller -->
+  <div class="col col-xs-12 col-sm-12 col-md-12 houseRegion" >
+      <span>Region &nbsp <b>-</b></span> &nbsp &nbsp {{::combinedData.region}}
+  </div>
+  <br> <br> <br> <br>
+  <!-- Button to show more details about the particular house -->
+  <!-- the string is altered by using 'split()' which splits the string by removing the value mentioned in split("?") -->
+  <!-- Then pop() method is called which returns the last element of the array  -->
+  <div class="col col-sm-12 col-md-12 houseButton">
+    <a ng-href="#/house/{{getId}}">
+      <button type="button" class="btn" name="button"> know more </button>
+    </a>
+  </div>
+
+</div>
+<!-- housesTemplate END-->

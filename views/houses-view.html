@@ -1,0 +1,132 @@
+
+<!-- The controller function will load on this block -->
+<!-- 'ng-init' stands for initialization of angular controller functions-->
+<!-- It remains same for all the houses blocks shown through 'ng-repeat' -->
+<!-- The parent view passes the data as parameter in the url and hence fom there using '$routeParams' and '$routeProvider' controller fetches the data and stores it in a variable -->
+<div class="singleHouseCard" style="margin-top:5% !important;margin-bottom:5% !important;" ng-init="myHousesController.showHousesPage()">
+
+  <!-- 'ng-repeat' for houses data START-->
+  <!-- Note, here all the data is being passed by controller by refrencing each other and -->
+  <!-- 'ng-repeat' requires the data from controller in an array of key value pairs -->
+  <div class=" row margins" ng-repeat="singleHouseData in myHousesController.singleHouseDetails">
+
+       <!-- House's name from the controller -->
+       <div class="col col-sm-12 col-md-12 text-center">
+          <i class="fa fa-book fa-5x" aria-hidden="true"></i><h2>{{::singleHouseData.name}}</h2>
+       </div> <br> <br> <br> <br> <br> <br> <br> <br>
+
+       <div class="col col-sm-5 col-md-5">
+         <!-- House's overlord from the controller -->
+         <!-- the string is altered by using 'split()' which splits the string by removing the value mentioned in split("?") -->
+         <!-- Then pop() method is called which returns the last element of the array  -->
+         <div class="col col-sm-12 col-md-12">
+           <span>Overlord &nbsp &nbsp<b>-</b>&nbsp &nbsp</span>
+           <a href="#/house/{{singleHouseData.overlord.split('/').pop()}}">{{::singleHouseData.overlord}}</a>
+         </div> <br> <br> <br> <br>
+         <!-- House's current lord from the controller -->
+         <!-- the string is altered by using 'split()' which splits the string by removing the value mentioned in split("?") -->
+         <!-- Then pop() method is called which returns the last element of the array  -->
+         <div class="col col-sm-12 col-md-12">
+           <span>Current Lord &nbsp &nbsp<b>-</b>&nbsp &nbsp
+             <code ng-if="singleHouseData.currentLord == ''">no data found</code>
+           </span>
+           <a style="width:50px !important;" href="#/character/{{singleHouseData.currentLord.split('/').pop()}}">
+             {{::singleHouseData.currentLord}}
+           </a>
+         </div> <br> <br> <br> <br>
+         <!-- House's region from the controller -->
+         <div class="col col-sm-12 col-md-12">
+           <span>Region &nbsp &nbsp<b>-</b>&nbsp &nbsp</span>{{::singleHouseData.region}}
+         </div> <br> <br> <br> <br>
+         <!-- House's heir from the controller -->
+         <!-- the string is altered by using 'split()' which splits the string by removing the value mentioned in split("?") -->
+         <!-- Then pop() method is called which returns the last element of the array  -->
+         <div class="col col-sm-12 col-md-12">
+           <span>Heir &nbsp &nbsp<b>-</b>&nbsp &nbsp
+             <code ng-if="singleHouseData.heir == ''">no data found</code>
+           </span>
+           <a style="width:50px !important;" href="#/character/{{singleHouseData.heir.split('/').pop()}}">
+             {{::singleHouseData.heir}}
+           </a>
+         </div> <br> <br> <br> <br>
+         <!-- House's coat of arms from the controller -->
+         <div class="col col-sm-12 col-md-12">
+           <span>Coat Of Arms &nbsp &nbsp<b>-</b>&nbsp &nbsp</span><br>{{::singleHouseData.coatOfArms}}
+           <code ng-if="singleHouseData.coatOfArms == ''">no data found</code>
+         </div> <br> <br> <br> <br> <br> <br>
+         <!-- House's founder from the controller -->
+         <div class="col col-sm-12 col-md-12">
+           <span>Founder &nbsp &nbsp<b>-</b>&nbsp &nbsp
+             <code ng-if="singleHouseData.founder == ''">no data found</code>
+           </span>
+           <a style="width:50px !important;" href="#/character/{{singleHouseData.founder.split('/').pop()}}">
+             {{::singleHouseData.founder}}
+           </a>
+         </div> <br> <br> <br> <br>
+         <!-- House's founded from the controller -->
+         <div class="col col-sm-12 col-md-12">
+           <span>Founded &nbsp &nbsp<b>-</b>&nbsp &nbsp
+              <code ng-if="singleHouseData.founded == ''">no data found</code>
+           </span>{{::singleHouseData.founded}}
+         </div>
+       </div>
+
+       <div class="col col-sm-1 col-md-1">
+       <!-- Blank space for UI purposes -->
+       </div>
+
+       <div class="col col-sm-6 col-md-6">
+         <!-- House's titles from the controller -->
+         <!-- the string is altered by using 'split()' which splits the string by removing the value mentioned in split("?") -->
+         <!-- Then pop() method is called which returns the last element of the array  -->
+         <!-- Note: here, inner ng-repeat had to be used because the the iterated element was in the form of array -->
+         <!-- and to iterate to the current element's array, we used inner ng-repeat -->
+         <div>Titles &nbsp &nbsp<b>-</b>&nbsp &nbsp</div>
+         <div class="col col-sm-12 col-md-12 text-center" ng-repeat="title in singleHouseData.titles | limitTo:20">
+           {{title}}
+           <code ng-if="singleHouseData.titles == ''">no data found</code>
+         </div> <br> <br> <br> <br> <br> <br>
+         <!-- House's sworn memebers from the controller -->
+         <!-- the string is altered by using 'split()' which splits the string by removing the value mentioned in split("?") -->
+         <!-- Then pop() method is called which returns the last element of the array  -->
+         <!-- Note: here, inner ng-repeat had to be used because the the iterated element was in the form of array -->
+         <!-- and to iterate to the current element's array, we used inner ng-repeat -->
+         <div>Sworn Members &nbsp &nbsp<b>-</b>&nbsp &nbsp</div>
+         <div class="col col-sm-12 col-md-12 text-center" ng-repeat="member in singleHouseData.swornMembers | limitTo:20">
+           <a href="#/character/{{member.split('/').pop()}}">{{member}}</a>
+           <code ng-if="singleHouseData.swornMembers == ''">no data found</code>
+         </div> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br><br> <br> <br> <br><br> <br>
+         <!-- House's seats from the controller -->
+         <!-- the string is altered by using 'split()' which splits the string by removing the value mentioned in split("?") -->
+         <!-- Then pop() method is called which returns the last element of the array  -->
+         <!-- Note: here, inner ng-repeat had to be used because the the iterated element was in the form of array -->
+         <!-- and to iterate to the current element's array, we used inner ng-repeat -->
+         <div>Seats &nbsp &nbsp<b>-</b>&nbsp &nbsp</div>
+         <div class="col col-sm-12 col-md-12 text-center" ng-repeat="seat in singleHouseData.seats | limitTo:20">
+           {{seat}} <code ng-if="singleHouseData.seats == ''"> no data found</code>
+         </div> <br> <br> <br> <br>
+         <!-- House's weapons from the controller -->
+         <!-- the string is altered by using 'split()' which splits the string by removing the value mentioned in split("?") -->
+         <!-- Then pop() method is called which returns the last element of the array  -->
+         <!-- Note: here, inner ng-repeat had to be used because the the iterated element was in the form of array -->
+         <!-- and to iterate to the current element's array, we used inner ng-repeat -->
+         <div >Weapons &nbsp &nbsp<b>-</b>&nbsp &nbsp</div>
+         <div class="col col-sm-12 col-md-12 text-center" ng-repeat="weapon in singleHouseData.ancestralWeapons | limitTo:20">
+           {{weapon}} <code ng-if="singleHouseData.ancestralWeapons == ''"> no data found</code>
+         </div>
+       </div>
+
+  </div>
+    <!-- 'ng-repeat' for houses data END-->
+</div>
+
+<!-- Back button START -->
+<p class="text-center">
+  <a href="#/">
+    <button type="button" class="btn backBtn" name="button">
+      <span style="float:left;">Back</span>
+      <i style="float:right;"class="fa fa-backward" aria-hidden="true"></i>
+    </button>
+  </a>
+</p>
+<!-- Back button END -->

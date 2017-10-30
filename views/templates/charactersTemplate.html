@@ -1,1 +1,29 @@
-{{combinedData.characters}}
+
+<!-- This is the template html file for characters -->
+<!-- It is declared in the custom directive -->
+<!-- It is here used to give different appearence to all categories inside a single ng-repeat -->
+<!-- To achieve the above stated, we need to create custom directives and for which template html is required where we design the look and feel of our custom directive-->
+
+<!-- charactersTemplate START-->
+
+<!-- Block to show the characters card -->
+<div class="card charactersCard" ng-if="combinedData.name != ''">
+  <!-- Name of the character from the controller -->
+  <div class="col col-sm-12 col-md-12 characterName">
+    <b>{{::combinedData.name}}</b>
+  </div> <br> <br> <br> <br>
+  <!-- Gender of the character from the controller -->
+  <div class="col col-sm-12 col-md-12 characterGender" >
+    {{::combinedData.gender}}
+  </div><br> <br> <br> <br>
+  <!-- Button to show more details about the particular character -->
+  <!-- the string is altered by using 'split()' which splits the string by removing the value mentioned in split("?") -->
+  <!-- Then pop() method is called which returns the last element of the array  -->
+  <div class="col col-sm-12 col-md-12 characterGender">
+    <a ng-href="#/character/{{getId}}">
+      <button type="button" class="btn" name="button"> know more </button>
+    </a>
+  </div>
+
+</div>
+<!-- charactersTemplate END-->

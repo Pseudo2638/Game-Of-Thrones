@@ -1,3 +1,40 @@
-<div class="container">
-  {{check}}
+
+<!-- This is the template html file for books -->
+<!-- It is declared in the custom directive -->
+<!-- It is here used to give different appearence to all categories inside a single ng-repeat -->
+<!-- To achieve the above stated, we need to create custom directives and for which template html is required where we design the look and feel of our custom directive-->
+
+<!-- booksTemplate START-->
+
+<!-- Block to show the books card -->
+<div class="card booksCard">
+  <!-- Name of the book from the controller -->
+  <div class="col col-sm-12 col-md-12 bookName">
+    <b>{{::combinedData.name}}</b>
+  </div>
+  <!-- Authors of the book from the controller -->
+  <div class="col col-sm-12 col-md-12 bookAuthor">
+    Author &nbsp &nbsp<b>-</b>&nbsp &nbsp{{::combinedData.authors[0]}} &nbsp &nbsp<span ng-if="::combinedData.data.authors[1]">& more</span>
+  </div>
+  <!-- Number of pages in the book from the controller -->
+  <div class="col col-sm-12 col-md-12 bookPages" >
+    Pages &nbsp &nbsp<b>-</b>&nbsp &nbsp{{::combinedData.numberOfPages}}
+  </div>
+  <!-- Publisher of the book from the controller -->
+  <div class="col col-sm-12 col-md-12 bookPublisher">
+    Publisher &nbsp &nbsp<b>-</b>&nbsp &nbsp{{::combinedData.publisher}}
+  </div>
+  <!-- Media Type of the book from the controller -->
+  <div class="col col-sm-12 col-md-12 bookMediaType">
+    Media &nbsp &nbsp<b>-</b>&nbsp &nbsp{{::combinedData.mediaType}}
+  </div>
+  <!-- Button to show more details about the particular book-->
+  <!-- the string is altered by using 'split()' which splits the string by removing the value mentioned in split("?") -->
+  <!-- Then pop() method is called which returns the last element of the array  -->
+  <div class="col col-sm-12 col-md-12">
+    <a ng-href="#/book/{{getId}}">
+      <button type="button" class="btn" name="button"> know more </button>
+    </a>
+  </div>
 </div>
+<!-- booksTemplate END -->

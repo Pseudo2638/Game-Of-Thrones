@@ -1,0 +1,76 @@
+
+<!-- The controller function will load on this block -->
+<!-- 'ng-init' stands for initialization of angular controller functions-->
+<!-- It remains same for all the books blocks shown through 'ng-repeat' -->
+<!-- The parent view passes the data as parameter in the url and hence fom there using '$routeParams' and '$routeProvider' controller fetches the data and stores it in a variable -->
+<div class="singleBookCard" style="margin-top:5% !important;margin-bottom:5% !important;" ng-init="myBooksController.showBooksPage()">
+
+  <!-- 'ng-repeat' for characters data START-->
+  <!-- Note, here all the data is being passed by controller by refrencing each other and -->
+  <!-- 'ng-repeat' requires the data from controller in an array of key value pairs -->
+  <div class=" row margins" ng-repeat="singleBookData in myBooksController.singleBookDetails">
+
+       <!-- Book's name from the controller -->
+       <div class="col col-sm-12 col-md-12 text-center">
+          <i class="fa fa-book fa-5x" aria-hidden="true"></i><h2>{{::singleBookData.name}}</h2>
+       </div> <br> <br> <br> <br> <br> <br> <br> <br>
+
+       <div class="col col-sm-5 col-md-5 text-center">
+         <!-- Book's authors from the controller -->
+         <!-- Note: here, inner ng-repeat had to be used because the the iterated element was in the form of array -->
+         <!-- and to iterate to the current element's array, we used inner ng-repeat -->
+         <div class="col col-sm-12 col-md-12" ng-repeat="author in singleBookData.authors">
+           <span>Author &nbsp &nbsp<b>-</b>&nbsp &nbsp</span>{{::author}}
+         </div> <br> <br>
+         <!-- Book's isbn from the controller -->
+         <div class="col col-sm-12 col-md-12">
+           <span>ISBN &nbsp &nbsp<b>-</b>&nbsp &nbsp</span>{{::singleBookData.isbn}}
+         </div> <br> <br>
+         <!-- Book's total pages from the controller -->
+         <div class="col col-sm-12 col-md-12">
+           <span>Total Pages &nbsp &nbsp<b>-</b>&nbsp &nbsp</span>{{::singleBookData.numberOfPages}}&nbsp[pages]
+         </div> <br> <br>
+         <!-- Book's origin country from the controller -->
+         <div class="col col-sm-12 col-md-12">
+           <span>Country &nbsp &nbsp<b>-</b>&nbsp &nbsp</span>{{::singleBookData.country}}
+         </div> <br> <br>
+         <!-- Book's media type from the controller -->
+         <div class="col col-sm-12 col-md-12">
+           <span>Media Type &nbsp &nbsp<b>-</b>&nbsp &nbsp</span>{{::singleBookData.mediaType}}
+         </div> <br> <br>
+         <!-- Book's publisher from the controller -->
+         <div class="col col-sm-12 col-md-12">
+           <span>Publisher &nbsp &nbsp<b>-</b>&nbsp &nbsp</span>{{::singleBookData.publisher}}
+         </div>
+
+      </div>
+      <div class="col col-sm-1 col-md-1">
+       <!-- Blank space for UI purposes -->
+      </div>
+
+      <div class="col col-sm-6 col-md-6">
+        <!-- Character present in the book from the controller -->
+        <!-- the string is altered by using 'split()' which splits the string by removing the value mentioned in split("?") -->
+        <!-- Then pop() method is called which returns the last element of the array  -->
+        <!-- Note: here, inner ng-repeat had to be used because the the iterated element was in the form of array -->
+        <!-- and to iterate to the current element's array, we used inner ng-repeat -->
+         <span>Characters &nbsp &nbsp<b>-</b>&nbsp &nbsp</span>
+         <div class="col col-sm-12 col-md-12 text-center" ng-repeat="character in singleBookData.characters | limitTo:20">
+           <a ng-href="#/character/{{character.split('/').pop()}}">{{character}}</a>
+         </div>
+      </div>
+
+  </div>
+  <!-- 'ng-repeat' for characters data END-->
+</div>
+
+<!-- Back button START -->
+<p class="text-center">
+  <a href="#/">
+    <button type="button" class="btn backBtn" name="button">
+      <span style="float:left;">Back</span>
+      <i style="float:right;"class="fa fa-backward" aria-hidden="true"></i>
+    </button>
+  </a>
+</p>
+<!-- Back button END -->

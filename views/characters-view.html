@@ -1,0 +1,116 @@
+
+<!-- The controller function will load on this block -->
+<!-- 'ng-init' stands for initialization of angular controller functions-->
+<!-- It remains same for all the characters blocks shown through 'ng-repeat' -->
+<!-- The parent view passes the data as parameter in the url and hence fom there using '$routeParams' and '$routeProvider' controller fetches the data and stores it in a variable -->
+<div class="singleCharacterCard" style="margin-top:5% !important;margin-bottom:5% !important;" ng-init="myCharactersController.showCharactersPage()">
+
+  <!-- 'ng-repeat' for characters data START-->
+  <!-- Note, here all the data is being passed by controller by refrencing each other and -->
+  <!-- 'ng-repeat' requires the data from controller in an array of key value pairs -->
+  <div class=" row margins" ng-repeat="singleCharacterData in myCharactersController.singleCharacterDetails">
+
+       <!-- Character's name from the controller -->
+      <div class="col col-sm-12 col-md-12 text-center">
+          <i class="fa fa-male fa-5x" aria-hidden="true"></i><h2>{{singleCharacterData.name}}<code ng-if="singleCharacterData.name == ''">Name not found</code></span></h2>
+     </div> <br> <br> <br> <br> <br> <br> <br> <br>
+
+     <div class="col col-sm-5 col-md-5 text-center">
+         <!-- Character's gender from the controller -->
+         <div class="col col-sm-12 col-md-12" >
+            <span>Gender &nbsp &nbsp<b>-</b>&nbsp &nbsp <code ng-if="singleCharacterData.gender == ''">no data found</code></span>{{::singleCharacterData.gender}}
+         </div> <br> <br> <br> <br>
+         <!-- Character's culture from the controller -->
+         <div class="col col-sm-12 col-md-12">
+            <span>Culture &nbsp &nbsp<b>-</b>&nbsp &nbsp<code ng-if="singleCharacterData.culture == ''">no data found</code></span>{{::singleCharacterData.culture}}
+         </div> <br> <br> <br> <br>
+         <!-- Characters who played from the controller -->
+         <!-- Note: here, inner ng-repeat had to be used because the the iterated element was in the form of array -->
+         <!-- and to iterate to the current element's array, we used inner ng-repeat -->
+         <div class="col col-sm-12 col-md-12" ng-repeat="played in singleCharacterData.playedBy">
+            <span>Played By &nbsp &nbsp<b>-</b>&nbsp &nbsp</span>
+            {{played}} <code ng-if="singleCharacterData.playedBy == ''">no data found</code>
+         </div> <br> <br> <br> <br>
+         <!-- Character's born from the controller -->
+         <div class="col col-sm-12 col-md-12">
+            <span>Born &nbsp &nbsp<b>-</b>&nbsp &nbsp<code ng-if="singleCharacterData.born == ''">no data found</code></span>{{singleCharacterData.born}}
+         </div> <br> <br> <br> <br>
+         <!-- Character's died from the controller -->
+         <div class="col col-sm-12 col-md-12">
+            <span>Died &nbsp &nbsp<b>-</b>&nbsp &nbsp<code ng-if="singleCharacterData.died == ''">no data found</code></span>{{singleCharacterData.died}}
+         </div> <br> <br> <br> <br>
+
+     </div>
+
+     <div class="col col-sm-1 col-md-1">
+     <!-- Blank space for UI purposes -->
+     </div>
+
+     <div class="col col-sm-6 col-md-6">
+
+         <!-- Books in which character present from the controller -->
+         <!-- the string is altered by using 'split()' which splits the string by removing the value mentioned in split("?") -->
+         <!-- Then pop() method is called which returns the last element of the array  -->
+         <!-- Note: here, inner ng-repeat had to be used because the the iterated element was in the form of array -->
+         <!-- and to iterate to the current element's array, we used inner ng-repeat -->
+         <div>Books &nbsp &nbsp<b>-</b>&nbsp &nbsp</div>
+         <div class="col col-sm-12 col-md-12 text-center" ng-repeat="book in singleCharacterData.books">
+            <a ng-href="#/book/{{book.split('/').pop()}}">{{book}}</a>
+            <code ng-if="singleCharacterData.books == ''">no data found</code></span>
+         </div> <br> <br> <br> <br> <br> <br>
+         <!-- Character's title from the controller -->
+         <!-- the string is altered by using 'split()' which splits the string by removing the value mentioned in split("?") -->
+         <!-- Then pop() method is called which returns the last element of the array  -->
+         <!-- Note: here, inner ng-repeat had to be used because the the iterated element was in the form of array -->
+         <!-- and to iterate to the current element's array, we used inner ng-repeat -->
+         <div>Titles &nbsp &nbsp<b>-</b>&nbsp &nbsp</div>
+         <div class="col col-sm-12 col-md-12 text-center" ng-repeat="title in singleCharacterData.titles">
+            {{title}}
+            <code ng-if="singleCharacterData.titles == ''">no data found</code></span>
+         </div> <br> <br> <br> <br>
+         <!-- Seasons in which character present from the controller -->
+         <!-- the string is altered by using 'split()' which splits the string by removing the value mentioned in split("?") -->
+         <!-- Then pop() method is called which returns the last element of the array  -->
+         <!-- Note: here, inner ng-repeat had to be used because the the iterated element was in the form of array -->
+         <!-- and to iterate to the current element's array, we used inner ng-repeat -->
+         <div>Seasons &nbsp &nbsp<b>-</b>&nbsp &nbsp</div>
+         <div class="col col-sm-12 col-md-12 text-center" ng-repeat="series in singleCharacterData.tvSeries">
+            {{series}}
+            <code ng-if="singleCharacterData.tvSeries == ''">no data found</code></span>
+         </div> <br> <br> <br> <br>
+         <!-- Character'a aliases from the controller -->
+         <!-- the string is altered by using 'split()' which splits the string by removing the value mentioned in split("?") -->
+         <!-- Then pop() method is called which returns the last element of the array  -->
+         <!-- Note: here, inner ng-repeat had to be used because the the iterated element was in the form of array -->
+         <!-- and to iterate to the current element's array, we used inner ng-repeat -->
+         <div>Known As &nbsp &nbsp<b>-</b>&nbsp &nbsp</div>
+         <div class="col col-sm-12 col-md-12 text-center" ng-repeat="aliase in singleCharacterData.aliases">
+            {{aliase}}
+            <code ng-if="singleCharacterData.aliases == ''">no data found</code></span>
+         </div> <br> <br> <br> <br>
+         <!-- Character's spouse from the controller -->
+         <!-- the string is altered by using 'split()' which splits the string by removing the value mentioned in split("?") -->
+         <!-- Then pop() method is called which returns the last element of the array  -->
+         <!-- Note: here, inner ng-repeat had to be used because the the iterated element was in the form of array -->
+         <!-- and to iterate to the current element's array, we used inner ng-repeat -->
+         <div>Spouse &nbsp &nbsp<b>-</b>&nbsp &nbsp</div>
+         <div class="col col-sm-12 col-md-12 text-center">
+            <a ng-href="#/character/{{singleCharacterData.spouse.split('/').pop()}}">{{singleCharacterData.spouse}}</a>
+            <code ng-if="singleCharacterData.aliases == ''">no data found</code></span>
+         </div>
+       </div>
+
+  </div>
+  <!-- 'ng-repeat' for characters data END -->
+</div>
+
+<!-- Back button START -->
+<p class="text-center">
+  <a href="#/">
+    <button type="button" class="btn backBtn" name="button">
+      <span style="float:left;">Back</span>
+      <i style="float:right;"class="fa fa-backward" aria-hidden="true"></i>
+    </button>
+  </a>
+</p>
+<!-- Back button END -->

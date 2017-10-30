@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="booksApp">
-  <head>
+<head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/css/index.css">
 
@@ -15,13 +15,13 @@
 
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Source+Sans+Pro|Lobster|Raleway|Merienda|Arima+Madurai" rel="stylesheet">
     <title> Game of thrones </title>
-  </head>
-  <body>
+</head>
+ <body>
 
-    <div jquery>
+  <div jquery>
 
-    <!-- Navbar START -->
     <div class="toogleBlockForNavbar">
+      <!-- Toggle button to show navbar as it is hidden initially using jQuery directive -->
       <div class="text-center showNavButton" id="toggleIcon" >
         <span>
           <a href="#/">
@@ -30,8 +30,13 @@
           </span>
       </div>
 
+    <!-- Navbar START -->
+    <!-- Different classes of navbar for different properties like: -->
+    <!-- 'navbar-default' for the color of the navbar,-->
+    <!-- 'navbar-fixed-top' for fixing the postion of nav to the top which remains at top while scrolling -->
     <nav class="navbar margins" role="navigation">
         <div class="row margins">
+
            <div class="col col-xs-4 col-md-4 col-sm-4">
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse" name="button">
@@ -47,13 +52,13 @@
            <div class="col col-xs-8 col-md-8 col-sm-8 margins">
              <div class="collapse navbar-collapse margins" id="navbarCollapse">
                <ul class="nav navbar-nav">
-                 <li><a href="#">About</a></li>
-                 <li><a href="#">Home</a></li>
+                 <li><a href="https://pseudo2638.github.io">About</a></li>
+                 <li><a href="#/">Home</a></li>
                </ul>
              </div>
            </div>
-         </div>
 
+         </div>
     </nav>
     <!-- Navbar END -->
     </div>
@@ -61,24 +66,31 @@
 
     </div>
 
-    </div>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
-    <!-- Angular.js CDN -->
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-      <script src="angular/app.js">  </script>
-      <script src="angular/directives/jQuery.js">  </script>
-      <script src="angular/directives/booksDirective.js">  </script>
-      <script src="angular/directives/charactersDirective.js">  </script>
-      <script src="angular/directives/housesDirective.js">  </script>
-      <script src="angular/routes.js">  </script>
-      <script src="angular/services/service.js">  </script>
-      <script src="angular/controllers/mainController.js">  </script>
+  <!-- Angular.js CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
 
-  </body>
+  <!-- Custom javascript files linking -->
+  <script src="angular/app.js">  </script>
+  <script src="angular/directives/jQuery.js">  </script>
+  <script src="angular/directives/booksDirective.js">  </script>
+  <script src="angular/directives/charactersDirective.js">  </script>
+  <script src="angular/directives/housesDirective.js">  </script>
+  <script src="angular/directives/fixAtTopOnScrollDirective.js">  </script>
+  <script src="angular/routes.js">  </script>
+  <script src="angular/services/service.js">  </script>
+  <script src="angular/controllers/mainController.js">  </script>
+  <script src="angular/controllers/booksController.js">  </script>
+  <script src="angular/controllers/charactersController.js">  </script>
+  <script src="angular/controllers/housesController.js">  </script>
+
+
+</body>
 </html>

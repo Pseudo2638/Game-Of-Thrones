@@ -63,10 +63,23 @@ nav
   margin-left: 0.5%;
   background-color: white;
   margin-top: 0.5%;
-  margin-bottom: 1%;
   margin-right: 0.5%;
+  transition-property: position;
+  transition-duration: 1s;
+  transition-timing-function: linear;
 }
 
+.filtersBlock p
+{
+  border-top: 2px solid #C4C4C4 !important;
+  border-bottom: 6px solid #C4C4C4 !important;
+}
+
+.filtersBlock p select
+{
+  width: 200px;
+  margin: 5%;
+}
 body
 {
   background-color: #C4C4C4 !important;
@@ -81,6 +94,7 @@ body
   margin-top: 0.5% !important;
   margin-bottom: 1%;
   margin-right: 0.5% !important;
+  font-family: 'Raleway', sans-serif;
 }
 
 .filterTitle
@@ -107,67 +121,19 @@ body
   font-family: 'Raleway', sans-serif;
 }
 
-#searchBlockCharector
-{
-  width: 100%;
-}
-#searchInput
-{
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
-  border: none;
-  border-bottom: 2px solid #C4C4C4;
-}
-
-.filterCharectors div
-{
-  padding-left: 5% ;
-  padding-right: 5%;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  font-style: normal !important;
-}
 
 .filterCharectors
 {
   border-bottom: 1px solid #C4C4C4;
 }
 
-.filterCharectors div
+
+.otherFilters
 {
   font-family: 'Raleway', sans-serif;
 }
 
-.filterCharectors h5
-{
-  font-family: 'Raleway', sans-serif;
-}
-
-.filterCharectors a
-{
-  padding: 1%;
-  color: black;
-  font-family: 'Raleway', sans-serif;
-  width: 50%;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  margin-left: 25%;
-  border-radius: 10px;
-  margin-right: 25%;
-  border: 1px solid #C4C4C4 !important;
-  transition-property: background,color;
-  transition-duration: 1s;
-  transition-timing-function: linear;
-}
-
-.filterCharectors a:hover
-{
-  background-color: green;
-  color: white;
-}
-
-#selectHouseDropdown
+#searchAllBlock
 {
   border: none !important;
   border-bottom: 1px solid #C4C4C4 !important;
@@ -179,7 +145,7 @@ body
   transition-timing-function: linear;
 }
 
-#selectHouseDropdown:hover
+#searchAllBlock:hover
 {
   border-bottom: 2px solid #62B7BA !important;
 }
@@ -206,6 +172,29 @@ body
 {
   background-color: red;
   color: white !important;
+}
+
+.backBtn
+{
+  background-color: transparent !important;
+  border: 1px solid red !important;
+  font-family: 'Raleway', sans-serif;
+  transition-property: background,color;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  color: black;
+  width:10%;
+}
+
+.backBtn:hover
+{
+  background-color: red !important;
+  color: white !important;
+}
+
+.backBtn i
+{
+  margin-top: 2%;
 }
 
 select
@@ -249,4 +238,314 @@ select:hover
 .mainRepeatBlock
 {
   border-top: 20px solid #C4C4C4;
+  border-bottom: 20px solid #C4C4C4;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
+.card
+{
+  border: 2px solid #C4C4C4;
+  height: 100% !important;
+  width: 80% !important;
+  height: 300px !important;
+  margin-left: 10% !important;
+  margin-right: 10% !important;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  box-shadow: 5px 5px 5px #C4C4C4;
+  transition-property: background,color;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
+.card:hover
+{
+  box-shadow: 10px 10px 10px #C4C4C4;
+}
+
+.housesCard
+{
+  background: url('/Game Of Thrones/assets/images/housesCard.jpg');
+  background-size: 100% 100% !important;
+}
+
+.housesCard div
+{
+  text-decoration: bold;
+  font-family: 'Raleway', sans-serif;
+  padding: 0 !important;
+  margin-left: 20%;
+}
+
+.houseName
+{
+  color: #62B7BA;
+  font-size: 18px;
+  margin-top: 5%;
+}
+
+.houseRegion
+{
+  color: #614E4C;
+  margin-top: -5%;
+}
+.housesCard div button
+{
+  background-color: transparent !important;
+  transition-property: background,color;
+  border: 1px solid #614E4C;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  margin-top: 100%;
+  margin-left: 100%;
+}
+
+
+.housesCard div button:hover
+{
+  background-color:#614E4C !important;
+  color: white;
+}
+
+.housesCard div p:hover
+{
+  background-color: green !important;
+}
+
+.charactersCard
+{
+  background: url('/Game Of Thrones/assets/images/characterCard.png');
+  background-size: 100% 100% !important;
+}
+
+.charactersCard div
+{
+  text-decoration: bold;
+  font-family: 'Raleway', sans-serif;
+  padding: 0 !important;
+  margin-left: 55% !important;
+
+}
+
+.charactersCard div button
+{
+  background-color: transparent !important;
+  transition-property: background,color;
+  border: 1px solid #C6685E;
+  transition-duration: 1s;
+  color: brown;
+  transition-timing-function: linear;
+}
+
+.charactersCard div button:hover
+{
+  background-color:#C6685E !important;
+  color: white;
+}
+
+.characterName
+{
+  font-size: 18px;
+  margin-top: 10%;
+}
+
+.characterGender
+{
+  color:#62B7BA;
+}
+
+.booksCard
+{
+  background: url('/Game Of Thrones/assets/images/booksCard.png');
+  background-size: 100% 100% !important;
+}
+
+.booksCard div
+{
+  text-decoration: bold;
+  font-family: 'Raleway', sans-serif;
+  margin-left: 50% !important;
+}
+
+.booksCard div button
+{
+  background-color: transparent !important;
+  transition-property: background,color;
+  border: 1px solid #C6685E;
+  transition-duration: 1s;
+  color: brown;
+  margin-top: 50% !important;
+  transition-timing-function: linear;
+}
+
+.booksCard div button:hover
+{
+  background-color:#C6685E !important;
+  color: white;
+}
+
+.bookName
+{
+  font-size: 12px;
+  text-decoration: bold;
+  margin-top: 15% !important;
+}
+
+.bookAuthor
+{
+  color: #62B7BA;
+  margin-left: -5% !important;
+}
+
+.card div
+{
+  width: auto !important;
+}
+.bookPages
+{
+  color: #C6685E;
+}
+
+.bookPublisher
+{
+  color: brown;
+  font-size: 12px;
+}
+
+.singleBookCard
+{
+  background: url('/Game Of Thrones/assets/images/singleBook.jpg');
+  background-size: 100% 100% !important;
+  margin-left: 5% !important;
+  margin-right: 5% !important;
+  border-radius: 16px;
+  box-shadow: 8px 8px 8px #5F4B56;
+  padding:5%;
+}
+
+.singleBookCard a
+{
+  color: white;
+}
+
+.singleBookCard a:hover
+{
+  text-decoration: none;
+  color: white;
+  text-decoration: bold;
+  font-size: 20px;
+}
+
+.singleBookCard:hover
+{
+  box-shadow: 14px 14px 14px #5F4B56;
+}
+.singleBookCard div
+{
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+
+.singleCharacterCard
+{
+  background: url('/Game Of Thrones/assets/images/singleCharacter.jpg');
+  background-size: 100% 100% !important;
+  margin-left: 5% !important;
+  margin-right: 5% !important;
+  border-radius: 16px;
+  box-shadow: 8px 8px 8px #5F4B56;
+  padding:5%;
+}
+
+.singleCharacterCard a
+{
+  color: white;
+}
+
+.singleCharacterCard a:hover
+{
+  text-decoration: none;
+  color: white;
+  text-decoration: bold;
+  font-size: 20px;
+}
+
+.singleCharacterCard:hover
+{
+  box-shadow: 14px 14px 14px #5F4B56;
+}
+
+.singleCharacterCard div
+{
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+
+.singleHouseCard
+{
+  background: url('/Game Of Thrones/assets/images/singleHouse.jpg');
+  background-size: 100% 100% !important;
+  margin-left: 5% !important;
+  margin-right: 5% !important;
+  border-radius: 16px;
+  box-shadow: 8px 8px 8px #5F4B56;
+  padding:5%;
+}
+
+.singleHouseCard a
+{
+  color: white;
+}
+
+.singleHouseCard a:hover
+{
+  text-decoration: none;
+  color: white;
+  text-decoration: bold;
+  font-size: 20px;
+}
+
+.singleHouseCard:hover
+{
+  box-shadow: 14px 14px 14px #5F4B56;
+}
+
+.singleHouseCard div
+{
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+
+.information
+{
+  padding: 5% !important;
+  width: 100% !important
+}
+
+.infoBlock
+{
+  font-family: 'Lobster', cursive;
+  font-size: 20px;
+}
+
+.fix-to-top
+{
+  position: fixed;
+  top:6%;
+}
+
+.showMore
+{
+  background-color: transparent !important;
+  font-family: 'Raleway', sans-serif !important;
+  transition-property: background,color;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
+.showMore:hover
+{
+  background-color: green !important;
+  color: white !important;
 }
